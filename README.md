@@ -12,25 +12,25 @@ This is an exercise based on unit tests to help you learn Redux. This exercise i
 
 ## First part of the exercise, fix the app.
 
-We have written some unit tests for the relevant code. Each unit test is side by side to the code it's testing. Example src/actions/index.js unit tests are in src/actions/index.spec.js
+We have written some unit tests for the relevant code. Each unit test sits side by side with the code it's testing. Example src/actions/index.js unit tests are in src/actions/index.spec.js
 
-The idea is simple, you should execute our unit tests and fix the errors. Once all the code passes the unit tests then you are able to start the app by doing `npm start`.
+The idea is simple, you should execute our unit tests and fix the errors. Once all the code passes the unit tests, you are able to start the app by doing `npm start`.
 
-In order make easier to understand Redux we have created a simplified version of `redux` and `react-redux`. We have some bugs in our simplified version of `redux`and `react-redux` that you should fix. The unit tests will help you fix the app and learn by "fixing".
+In order to make it easier to understand Redux we have created a simplified version of `redux` and `react-redux`. We have some bugs in our simplified version of `redux`and `react-redux` that you should fix. The unit tests will help you fix the app and learn by "fixing".
 
 - execute `npm test`
 
 ## Second part of the exercise, improve the app.
 
-1. Replace our simplified version of `redux` and `react-redux` with https://github.com/reactjs/redux and https://github.com/reactjs/react-redux now that you understood how it works. The official ones have cooler features that you should use ;)
+1. Replace our simplified version of `redux` and `react-redux` with https://github.com/reactjs/redux and https://github.com/reactjs/react-redux now that you've understood how it works. The official ones have cooler features that you should use ;)
 
-2. When we add the same beer to the basket twice we get an error in the browser's console. We suggest you the following fix, when a beer is added to the basket it should be removed from the List of beers you can buy.
+2. When we add the same beer to the basket twice we get an error in the browser's console. We suggest you try the following fix, when a beer is added to the basket it should be removed from the List of beers you can buy.
 
-3. Move the state of components/App.js (this.state.isSideMenuOpen) to the store
+3. Move the state of components/App.js (this.state.isSideMenuOpen) to the store.
 
-4. When a beer is added to the basket the side menu with the basket should be opened
+4. When a beer is added to the basket, the side menu with the basket should be opened.
 
-5. EXTRA BONUS! There is a button in the Basket component that should remove the beer from the basket. Implement it with its corresponding reducer and actions. When a beer is removed from the basket it should be available in the main list so it can be added to the basket again
+5. EXTRA BONUS! There is a button in the Basket component that should remove the beer from the basket. Implement the button with its corresponding reducer and actions. When a beer is removed from the basket it should be available in the main list so it can be added to the basket again.
 
 ## License
 
