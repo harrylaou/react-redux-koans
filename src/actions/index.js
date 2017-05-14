@@ -2,10 +2,11 @@ export const RECEIVE_BEERS = 'RECEIVE_BEERS'
 export const ADD_BEER_TO_CART = 'ADD_BEER_TO_CART'
 
 export const receiveBeers = beers => ({
-  type: 'HOW_SHOULD_I_BE_CALLED?',
+  type: RECEIVE_BEERS,
+  beers : beers
 })
 
 export const addBeerToCart = beer => ({
   type: ADD_BEER_TO_CART,
-  beer
+  beer : beer
 })
