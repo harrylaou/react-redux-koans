@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux'
-// import { combineReducers } from '../redux/combineReducers'
 
 import beers from './beers'
 import cart from './cart'
+import sidePanel from './sidePanel'
 
 const reducers = combineReducers({
   beers,
-  cart
+  cart,
+  sidePanel
 })
 
 export default reducers

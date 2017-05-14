@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import { connect } from '../../react-redux/connect'
 import * as api from '../../api'
 import * as actions from '../../actions'
 
@@ -8,13 +7,18 @@ class List extends React.Component {
   componentDidMount() {
     api.fetchBeers().then( beers => {
       this.props.dispatch(actions.receiveBeers(beers))
+
     })
   }
 
   render() {
+    // console.log('this.props.beers',this.props.beers);
+    // console.log('this.props.beersInCart',this.props.beersInCart);
+
     return (
       <div>
-        {this.props.beers.map( beer => (
+        {this.props.beers
+            .map( beer => (
           <div className="row" key={beer.id}>
             <div className="col-md-4">
               <img className="img-responsive" src={beer.photo_link}></img>
@@ -25,7 +29,11 @@ class List extends React.Component {
               <p>{beer.size} <span className="label label-warning"> &pound; {beer.price}</span></p>
               <button
                 className="btn btn-primary"
-                onClick={() => this.props.dispatch(actions.addBeerToCart(beer))}
+                onClick={() => {
+                    this.props.dispatch(actions.addBeerToCart(beer))
+                    this.props.dispatch(actions.sidePanel(true))
+                }
+            }
               >
                 Buy me!
               </button>
@@ -39,7 +47,8 @@ class List extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  beers: state.beers
+  beers: state.beers,
+  beersInCart : state.cart
 })
 
 const mapDispatchToProps = dispatch => ({

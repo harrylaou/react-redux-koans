@@ -1,4 +1,4 @@
-import { RECEIVE_BEERS } from '../actions'
+import { RECEIVE_BEERS, ADD_BEER_TO_CART ,REMOVE_BEER_FROM_CART} from '../actions'
 
 /*
 reducers should do 3 things:
@@ -9,6 +9,10 @@ reducers should do 3 things:
 
 const beers = (state = [],  action) => {
   switch (action.type) {
+     case ADD_BEER_TO_CART:
+        return state.filter(beer=>action.beer.id!=beer.id)
+    case REMOVE_BEER_FROM_CART:
+        return [action.beer,...state]
     case RECEIVE_BEERS:
       return [...state,...action.beers]
     default :
